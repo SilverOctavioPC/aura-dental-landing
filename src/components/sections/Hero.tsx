@@ -46,7 +46,7 @@ export function Hero() {
               <a 
                 href={`https://api.whatsapp.com/send?phone=${siteContent.general.whatsappNumber}&text=${encodeURIComponent(siteContent.general.whatsappMessage)}`}
                 target="_blank"
-                className="flex items-center justify-center gap-3 bg-primary text-white border-2 border-transparent px-8 py-3.5 rounded-full font-semibold hover:bg-green-600 transition-all shadow-lg hover:shadow-primary/30"
+                className="flex items-center justify-center gap-3 bg-primary text-white border-2 border-transparent px-8 py-3.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-primary/30"
               >
                 <Calendar size={20} />
                 {siteContent.hero.ctaWhatsapp}

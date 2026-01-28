@@ -45,7 +45,7 @@ export function Navbar() {
           <Link
             href={whatsappLink}
             target="_blank"
-            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-green-600 transition-all font-semibold shadow-md hover:shadow-lg"
+            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition-all font-semibold shadow-md hover:shadow-lg"
           >
             <CalendarCheck size={18} />
             Agenda tu cita
