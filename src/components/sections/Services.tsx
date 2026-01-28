@@ -26,16 +26,16 @@ export function Services() {
           {siteContent.services.items.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
-              className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all group ${idx === siteContent.services.items.length - 1 ? 'md:col-span-2 lg:col-span-1 xl:col-span-2' : ''}`}
+              className={`group bg-white p-8 rounded-3xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-blue-100 transition-all duration-300 ${idx === siteContent.services.items.length - 1 ? 'md:col-span-2 lg:col-span-1 xl:col-span-1' : ''}`}
             >
-              <div className="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <service.icon />
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-white border border-blue-100 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:from-primary group-hover:to-blue-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">
+                <service.icon size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">

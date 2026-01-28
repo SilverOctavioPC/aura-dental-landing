@@ -3,12 +3,12 @@ import {
   ScanFace,
   Activity,
   Sparkles,
-  Bone,
   Baby,
   Stethoscope,
   HeartHandshake,
   ShieldCheck,
-  Award
+  Award,
+  Drill
 } from 'lucide-react';
 
 export const siteContent = {
@@ -111,7 +111,7 @@ export const siteContent = {
         title: "Implantes Dentales",
         description:
           "Soluciones fijas y duraderas para la reposición de dientes ausentes.",
-        icon: Bone
+        icon: Drill
       },
       {
         title: "Odontología Infantil",
