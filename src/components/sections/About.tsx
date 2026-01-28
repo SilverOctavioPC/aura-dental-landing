@@ -56,7 +56,7 @@ export function About() {
             className="flex-1 w-full max-w-lg lg:max-w-none"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-white group">
