@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Dentistas Oaxaca | OdontoCAM",
+  title: "Aura Dental | Dentistas Oaxaca",
   description: "Especialistas dentales cerca de ti en Oaxaca. Conoce la excelencia para tu salud bucal.",
   icons: {
     icon: '/favicon.ico', // Assuming default or will need to add one

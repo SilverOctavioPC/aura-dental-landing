@@ -21,8 +21,10 @@ export const siteContent = {
     phoneDisplay: "951 308 1091",
     phoneSecondary: "",
     address: {
-      line1: "Zona Centro, Oaxaca de Juárez",
-      line2: "Dirección disponible previa cita"
+      line1: "C. Violetas 401, Reforma",
+      line2: "68050 Oaxaca de Juárez, Oax.",
+      googleMapsLink: "https://share.google/S81WBDbxf1PlgOP0Z",
+      mapEmbedUrl: "https://maps.google.com/maps?width=100%25&height=600&hl=es&q=C.%20Violetas%20401,%20Reforma,%2068050%20Oaxaca%20de%20Ju%C3%A1rez,%20Oax.&t=&z=16&ie=UTF8&iwloc=B&output=embed"
     },
     schedule: {
       weekdays: "Lunes a Viernes · 09:00 AM – 08:00 PM",

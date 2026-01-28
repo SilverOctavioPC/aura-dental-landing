@@ -24,8 +24,15 @@ export function Contact() {
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">Dirección</h3>
                   <p className="text-gray-600">
-                    {siteContent.general.address.line1}<br />
-                    {siteContent.general.address.line2}
+                    <a 
+                      href={siteContent.general.address.googleMapsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      {siteContent.general.address.line1}<br />
+                      {siteContent.general.address.line2}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -76,7 +83,7 @@ export function Contact() {
           <div className="h-[400px] lg:h-[500px] w-full bg-gray-200 rounded-3xl overflow-hidden shadow-lg border border-gray-200 relative">
              {/* Map Iframe for simplicity/robustness over complex Leaflet setup in V1, as requested in prompt often fails with SSR without dynamic import */}
              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3813.8211474589034!2d-96.71919528517833!3d17.081398988262645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c723d241511b51%3A0x7bbe0b7f5a583fb!2sDentistas%20Oaxaca%20%7C%20OdontoCam!5e0!3m2!1ses-419!2smx!4v1615249637629!5m2!1ses-419!2smx"
+                src={siteContent.general.address.mapEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

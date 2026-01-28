@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section id="hero" className="pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
