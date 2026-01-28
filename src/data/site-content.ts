@@ -29,7 +29,16 @@ export const siteContent = {
     schedule: {
       weekdays: "Lunes a Viernes · 09:00 AM – 08:00 PM",
       saturday: "Sábados · 09:00 AM – 03:00 PM"
-    }
+    },
+    socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      tiktok: "https://tiktok.com"
+    },
+    legal: [
+      { label: "Aviso de Privacidad", href: "#" },
+      { label: "Términos y Condiciones", href: "#" }
+    ]
   },
 
   hero: {
