@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Phone, Clock, Mail } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 import { siteContent } from '@/data/site-content';
 
 export function Contact() {
@@ -73,7 +73,7 @@ export function Contact() {
                <a 
                 href={`https://api.whatsapp.com/send?phone=${siteContent.general.whatsappNumber}&text=${encodeURIComponent(siteContent.general.whatsappMessage)}`}
                 target="_blank"
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-600 transition-colors shadow-lg hover:shadow-green-500/30"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-green-500 text-white px-8 py-4 rounded-xl font-boldshadow-lg hover:shadow-green-500/40 hover:bg-green-600 hover:scale-105 active:scale-95 transition-all duration-300"
                >
                  {siteContent.contact.ctaButton}
                </a>

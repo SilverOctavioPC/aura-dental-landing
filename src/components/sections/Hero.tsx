@@ -39,7 +39,7 @@ export function Hero() {
             >
               <a 
                 href={`tel:${siteContent.general.phoneDisplay.replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-3 bg-white border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3.5 rounded-full font-semibold transition-all"
+                className="flex items-center justify-center gap-3 bg-white border-2 border-primary text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-primary/5 hover:scale-105 active:scale-95 hover:shadow-lg transition-all duration-300"
               >
                 <Phone size={20} />
                 {siteContent.hero.ctaCall}
@@ -47,7 +47,7 @@ export function Hero() {
               <a 
                 href={`https://api.whatsapp.com/send?phone=${siteContent.general.whatsappNumber}&text=${encodeURIComponent(siteContent.general.whatsappMessage)}`}
                 target="_blank"
-                className="flex items-center justify-center gap-3 bg-primary text-white border-2 border-transparent px-8 py-3.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-primary/30"
+                className="flex items-center justify-center gap-3 bg-primary text-white border-2 border-transparent px-8 py-3.5 rounded-full font-semibold shadow-lg hover:shadow-primary/40 hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 <Calendar size={20} />
                 {siteContent.hero.ctaWhatsapp}

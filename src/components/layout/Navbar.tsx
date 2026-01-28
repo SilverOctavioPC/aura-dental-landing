@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, CalendarCheck } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteContent } from '@/data/site-content';
 
@@ -45,7 +44,7 @@ export function Navbar() {
           <Link
             href={whatsappLink}
             target="_blank"
-            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition-all font-semibold shadow-md hover:shadow-lg"
+            className="flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <CalendarCheck size={18} />
             Agenda tu cita
@@ -84,7 +83,7 @@ export function Navbar() {
               <Link
                 href={whatsappLink}
                 target="_blank"
-                className="flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-xl font-semibold"
+                className="flex items-center justify-center gap-2 bg-primary text-white px-5 py-3 rounded-xl font-semibold shadow-md active:scale-95 transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 <CalendarCheck size={18} />
