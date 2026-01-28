@@ -56,6 +56,11 @@ export const siteContent = {
     mainHeading: "Cuidado dental con enfoque profesional",
     description:
       "Aura Dental es una clínica enfocada en la prevención, el diagnóstico avanzado y el tratamiento odontológico integral. Nuestro compromiso es ofrecer atención segura, ética y basada en evidencia clínica.",
+    images: [
+      "/assets/hero/portada.jpeg",
+      "/assets/team/dr-alejandro.jpeg", 
+      "/assets/team/dra-fernanda.jpeg"
+    ],
     cards: [
       {
         icon: HeartHandshake,
