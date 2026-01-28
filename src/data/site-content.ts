@@ -148,6 +148,37 @@ export const siteContent = {
     ]
   },
 
+  testimonials: {
+    title: "Historias de Sonrisas",
+    description: "Lo que dicen nuestros pacientes sobre su experiencia en Aura Dental.",
+    items: [
+      {
+        id: 1,
+        name: "María Elena R.",
+        text: "Llegué con mucho miedo por una mala experiencia pasada, pero aquí me hicieron sentir tranquila desde el primer momento. El tratamiento fue indoloro y el resultado increíble.",
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "Carlos Méndez",
+        text: "La atención es de primera. Me realicé una limpieza y blanqueamiento, y mis dientes quedaron perfectos. Muy profesionales y puntuales.",
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: "Sofía T.",
+        text: "Llevo a mis hijos aquí y les encanta. La Dra. Fernanda tiene una paciencia infinita con los niños. Recomendadísimo para familias.",
+        rating: 5,
+      },
+      {
+        id: 4,
+        name: "Javier G.",
+        text: "Excelente servicio de urgencia. Me atendieron un sábado por un dolor de muela insoportable y resolvieron el problema rápido. Grandes profesionales.",
+        rating: 5,
+      }
+    ]
+  },
+
   contact: {
     sectionTitle: "Contacto",
     heading: "Agenda tu consulta con nosotros",

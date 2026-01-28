@@ -6,6 +6,8 @@ import { About } from '@/components/sections/About';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/layout/Footer';
 
+import { Testimonials } from '@/components/sections/Testimonials';
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
@@ -14,6 +16,7 @@ export default function Home() {
       <About />
       <Services />
       <Team />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
