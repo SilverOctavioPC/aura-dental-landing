@@ -27,7 +27,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
            {/* Placeholder for Logo Image - In real app use Next Image */}
            <div className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <span className="text-primary">{siteContent.general.brandName}</span>{siteContent.general.brandNameHighlight}
+            <span className="text-primary">{siteContent.general.brandName}</span> {siteContent.general.brandNameHighlight}
            </div>
         </Link>
 

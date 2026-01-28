@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { siteContent } from '@/data/site-content';
 
 export function Team() {
@@ -24,11 +25,15 @@ export function Team() {
                 viewport={{ once: true }}
                 className="bg-gray-50 rounded-2xl overflow-hidden group hover:shadow-xl transition-shadow border border-gray-100"
               >
-                <div className="aspect-[4/3] bg-gray-200 relative overflow-hidden">
-                    {/* Placeholder for real team images */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-100">
-                      Foto {doc.name}
-                    </div>
+                <div className="aspect-[4/5] relative overflow-hidden bg-gray-100">
+                    {/* Image with fallback capability could be complex, for now assuming images exist or using standard Next Image behavior */}
+                    <Image 
+                      src={doc.image} 
+                      alt={doc.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                 </div>
                 <div className="p-6">
                   <span className="text-primary text-sm font-bold uppercase tracking-wide">{doc.role}</span>

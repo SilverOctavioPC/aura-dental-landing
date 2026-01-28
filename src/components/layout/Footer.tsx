@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
           <div className="text-2xl font-bold text-white">
-            <span className="text-primary">{siteContent.general.brandName}</span>{siteContent.general.brandNameHighlight}
+            <span className="text-primary">{siteContent.general.brandName}</span> {siteContent.general.brandNameHighlight}
           </div>
 
           <div className="flex gap-6 text-sm font-medium">

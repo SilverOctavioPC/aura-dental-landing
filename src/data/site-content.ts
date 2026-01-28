@@ -38,7 +38,8 @@ export const siteContent = {
     subtitle:
       "Diagnóstico preciso, tratamientos personalizados y un entorno clínico diseñado para tu tranquilidad.",
     ctaCall: "Llamar a clínica",
-    ctaWhatsapp: "Agendar valoración"
+    ctaWhatsapp: "Agendar valoración",
+    image: "/assets/hero/portada.jpeg"
   },
 
   about: {
@@ -127,19 +128,22 @@ export const siteContent = {
         name: "Dr. Alejandro Morales",
         role: "Cirujano Dentista",
         bio:
-          "Especialista en rehabilitación oral y diagnóstico clínico con enfoque integral."
+          "Especialista en rehabilitación oral y diagnóstico clínico con enfoque integral.",
+        image: "/assets/team/dr-alejandro.jpeg"
       },
       {
         name: "Dra. Fernanda López",
         role: "Odontopediatra",
         bio:
-          "Experiencia en atención dental infantil enfocada en prevención y educación."
+          "Experiencia en atención dental infantil enfocada en prevención y educación.",
+        image: "/assets/team/dra-fernanda.jpeg"
       },
       {
         name: "Dr. Ricardo Sánchez",
         role: "Endodoncista",
         bio:
-          "Especialista en tratamientos de conductos y control del dolor dental."
+          "Especialista en tratamientos de conductos y control del dolor dental.",
+        image: "/assets/team/dr-ricardo.jpeg"
       }
     ]
   },

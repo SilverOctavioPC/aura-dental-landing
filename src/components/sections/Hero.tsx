@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Phone, Calendar } from 'lucide-react';
 import { siteContent } from '@/data/site-content';
 
@@ -66,10 +67,13 @@ export function Hero() {
             
             {/* Placeholder for SVG content from original site */}
              <div className="relative aspect-square bg-gray-100 rounded-3xl overflow-hidden shadow-2xl skew-y-1">
-                {/* Normally we would use <Image /> here for 'assets/img/dentista oaxaca - paciente.svg' */}
-                <div className="flex items-center justify-center h-full bg-slate-50 text-gray-400">
-                    <p>Imagen Paciente</p>
-                </div>
+                <Image 
+                  src={siteContent.hero.image}
+                  alt="Tratamiento dental profesional en Oaxaca"
+                  fill
+                  className="object-cover"
+                  priority
+                />
             </div>
           </motion.div>
 
