@@ -13,7 +13,7 @@ export function About() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
+    }, 5000); // Change image every 5 seconds
     return () => clearInterval(timer);
   }, [images.length]);
 
