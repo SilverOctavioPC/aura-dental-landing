@@ -60,9 +60,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="es" className="scroll-smooth overflow-x-hidden">
       <body
-        className={`${poppins.variable} font-sans antialiased text-gray-600`}
+        className={`${poppins.variable} font-sans antialiased text-gray-600 overflow-x-hidden`}
       >
         {children}
         <FloatingWhatsApp />

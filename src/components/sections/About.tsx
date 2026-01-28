@@ -83,7 +83,7 @@ export function About() {
               {/* Navigation Arrows */}
               <button
                 onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-0 group-hover:opacity-100 z-20 hover:scale-110"
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 z-20 hover:scale-110"
                 aria-label="Imagen anterior"
               >
                 <ChevronLeft size={24} />
@@ -91,7 +91,7 @@ export function About() {
               
               <button
                 onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-0 group-hover:opacity-100 z-20 hover:scale-110"
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 z-20 hover:scale-110"
                 aria-label="Siguiente imagen"
               >
                 <ChevronRight size={24} />
