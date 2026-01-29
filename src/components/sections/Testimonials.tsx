@@ -7,14 +7,17 @@ import { siteContent } from '@/data/site-content';
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const items = siteContent.testimonials.items;
 
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [items.length]);
+  }, [items.length, currentIndex, isPaused]);
 
   const paginate = (newDirection: number) => {
     setCurrentIndex((prev) => {
@@ -51,7 +54,11 @@ export function Testimonials() {
         </div>
 
         {/* Carousel Container */}
-        <div className="max-w-4xl mx-auto relative">
+        <div 
+          className="max-w-4xl mx-auto relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           
           {/* Navigation Buttons */}
           <button 

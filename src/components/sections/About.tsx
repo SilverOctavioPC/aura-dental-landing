@@ -8,14 +8,17 @@ import { siteContent } from '@/data/site-content';
 
 export function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const images = siteContent.about.images;
 
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000); // Change image every 5 seconds
     return () => clearInterval(timer);
-  }, [images.length, currentImageIndex]);
+  }, [images.length, currentImageIndex, isPaused]);
 
   const goToPrevious = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
@@ -26,11 +29,17 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="about" className="relative py-24 overflow-hidden bg-gray-50">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-teal-50/40 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 lg:px-8">
         
         {/* Top Section: Text + Image Carousel */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
           
           {/* Text Content */}
           <motion.div 
@@ -40,13 +49,13 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary font-bold tracking-wider text-sm uppercase mb-3 block">
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-primary font-bold tracking-wide text-xs uppercase mb-4">
               {siteContent.about.sectionTitle}
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
               {siteContent.about.mainHeading}
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
               {siteContent.about.description}
             </p>
           </motion.div>
@@ -58,8 +67,10 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-white group">
+            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/10 border-4 border-white group">
               <AnimatePresence mode="popLayout">
                 <motion.div
                   key={currentImageIndex}
@@ -75,36 +86,40 @@ export function About() {
                     fill
                     className="object-cover"
                   />
-                  {/* Overlay gradient for better text contrast if needed, subtle here */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent mix-blend-multiply" />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </motion.div>
               </AnimatePresence>
               
               {/* Navigation Arrows */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 z-20 hover:scale-110"
-                aria-label="Imagen anterior"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              
-              <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-800 hover:text-primary transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 z-20 hover:scale-110"
-                aria-label="Siguiente imagen"
-              >
-                <ChevronRight size={24} />
-              </button>
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full border border-white/50 flex items-center justify-center text-white transition-all hover:scale-110 z-20"
+                  aria-label="Imagen anterior"
+                >
+                  <ChevronLeft size={28} />
+                </button>
+                
+                <button
+                  onClick={goToNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full border border-white/50 flex items-center justify-center text-white transition-all hover:scale-110 z-20"
+                  aria-label="Siguiente imagen"
+                >
+                  <ChevronRight size={28} />
+                </button>
+              </div>
               
               {/* Carousel Indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10 px-4 py-2 rounded-full bg-black/10 backdrop-blur-sm">
                 {images.map((_, idx) => (
-                  <div 
+                  <button
                     key={idx}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      idx === currentImageIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/50'
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/60 hover:bg-white/80'
                     }`}
+                    aria-label={`Ir a imagen ${idx + 1}`}
                   />
                 ))}
               </div>
@@ -113,8 +128,8 @@ export function About() {
         
         </div>
 
-        {/* Bento Grid Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Bento Grid Cards - Glassmorphism */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {siteContent.about.cards.map((item, index) => (
             <motion.div
               key={index}
@@ -122,17 +137,18 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
               viewport={{ once: true }}
-              className="group bg-gray-50 p-8 rounded-3xl hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 border border-transparent hover:border-blue-50 relative overflow-hidden"
+              className="group relative p-8 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Decorative Circle Background */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-2xl group-hover:bg-blue-200/50 transition-colors" />
-
-              <div className="relative z-10">
-                <div className="mb-6 w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <item.icon size={28} />
+               {/* Glass Background */}
+              <div className="absolute inset-0 bg-white/60 backdrop-blur-lg border border-white/60 shadow-lg shadow-gray-200/50 group-hover:shadow-xl group-hover:shadow-blue-500/10 transition-all duration-300 z-0 rounded-3xl" />
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-6 w-16 h-16 bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-sm border border-blue-100 flex items-center justify-center text-primary group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  <item.icon size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed font-medium">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
                   {item.description}
                 </p>
               </div>
