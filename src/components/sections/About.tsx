@@ -15,7 +15,7 @@ export function About() {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000); // Change image every 5 seconds
     return () => clearInterval(timer);
-  }, [images.length]);
+  }, [images.length, currentImageIndex]);
 
   const goToPrevious = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
